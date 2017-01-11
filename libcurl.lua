@@ -2,8 +2,6 @@
 --libcurl ffi binding.
 --Written by Cosmin Apreutesei. Public Domain.
 
-if not ... then require'libcurl_test'; return end
-
 local ffi = require'ffi'
 local bit = require'bit'
 require'libcurl_h'
@@ -745,7 +743,8 @@ multi._setopt_options = {
 	[C.CURLMOPT_MAX_PIPELINE_LENGTH] = longbool,
 	[C.CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE] = longbool,
 	[C.CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE] = longbool,
-	[C.CURLMOPT_PIPELINING_SITE_BL] = pcharlist,
+	-- The function for pcharlist seems to be missing in upstream sources
+	--[C.CURLMOPT_PIPELINING_SITE_BL] = pcharlist,
 	[C.CURLMOPT_PIPELINING_SERVER_BL] = pchararray,
 	[C.CURLMOPT_MAX_TOTAL_CONNECTIONS] = long,
 	[C.CURLMOPT_PUSHFUNCTION] = cb'curl_push_callback',
