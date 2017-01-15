@@ -4,7 +4,7 @@
 
 local ffi = require'ffi'
 local bit = require'bit'
-require'libcurl_h'
+require('libcurl.libcurl_h')
 local C = ffi.load'curl'
 local curl = {C = C}
 
